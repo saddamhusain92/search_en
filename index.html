@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>earn coin 🪙</title>
+</head>
+<body>
+   
+  <input type="text" name="search" id="query">
+  <input type="button" onclick="searchfun()" value="search">
+   
+    <script>
+var input = document.getElementById("query");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchfun()
+  }
+});
+     function searchfun(){
+        let url = "https://www.bing.com/search?q="
+        let query = document.getElementById('query').value
+        let length = query.length-1
+        for(let i=length;i>=0;i-=2){
+            window.open(url+query[i])
+        }    
+   }
+    </script>
+</body>
+</html>
