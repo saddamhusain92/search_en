@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>earn coin 🪙</title>
+    <title>earn coin🪙</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    
-  <input type="text" name="search" id="query">
-  <input type="button" onclick="searchfun()" value="search">
-   
+  <div class='logo'>
+    Heacking coin🪙
+  </div>
+  <div class='search'>
+    <input placeholder='Search' id="query" type='text'>
+    <div class='button'>
+      <button  onclick="searchfun()" >Search</button>
+    </div>
+  </div>
+
     <script>
 var input = document.getElementById("query");
 input.addEventListener("keypress", function(event) {
@@ -22,9 +30,15 @@ input.addEventListener("keypress", function(event) {
         let url = "https://www.bing.com/search?q="
         let query = document.getElementById('query').value
         let length = query.length-1
-        for(let i=length;i>=0;i-=2){
-            window.open(url+query[i])
-        }    
+        // for(let i=length;i>=0;i-=2){
+        //     window.open(url+query[i])
+        // }  
+        
+for (var i = 1; i <=query.length; i++) {
+  var newString = query.slice(0, i)
+  window.open(url+newString)
+  
+}
    }
     </script>
 </body>
