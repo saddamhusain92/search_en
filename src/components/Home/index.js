@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SignOut from '../SignOut'
 import { auth, db, usercollectionRef } from '../../firebase/configration'
 import { doc, getDocs,updateDoc } from 'firebase/firestore';
+import dummy from '../../assets/Profile.png'
 function Home() {
 const[user,setUser] = useState({})
 const[input,setInput] = useState("")
@@ -33,16 +34,15 @@ getUSer()
   return (
     <div className='h-[100vh] bg-blue-100 p-2'>
         <div className='flex justify-end p-2 items-center gap-2'>
-     {count}
-        <small>Bal:{user.hrefcount}</small>
+        <small>Trail Bal:{user.hrefcount}</small>
         <small className='font-bold'>{user.displayName}</small>
         <SignOut/>
-        <img src={user.photoURL} className='h-5 w-5 rounded-full' alt='profile'/>
+        <img src={user.photoURL?user.photoURL:dummy} className='h-8 w-8 rounded-full' alt='profile'/>
       
         </div> 
         <div>
         <div className='logo'>
-    Heacking faizal coin🪙
+    Heacking 2023 coin🪙
   </div>
   <div class='search'>
     <input placeholder='Search' onChange={(e)=>setInput(e.target.value)}  type='text'/>
