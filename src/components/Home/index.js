@@ -16,10 +16,11 @@ const getUSer = async()=>{
   
 }
 const  search = ()=>{
-let url = "https://www.bing.com/search?q="   
+ 
 for (var i = 1; i <=input.length; i++) {
 var newString = input.slice(0, i)
-window.open(url+newString)
+window.open(`https://www.bing.com/news/search?q=${newString}&qs=n&form=QBNT&sp=-1&lq=0&pq=${newString}&sc=10-6&sk=&cvid=F14BE8E551E349CD89E57FC5083090CE&ghsh=0&ghacc=0&ghpl=`)
+
 }
 updateForm()
 }
